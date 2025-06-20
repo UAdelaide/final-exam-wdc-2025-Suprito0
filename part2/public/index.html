@@ -13,7 +13,7 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
       <form @submit.prevent="login" class="mx-auto" style="max-width: 300px;">
         <div>
-          <input type="text" class="form-control mb-3" placeholder="Username" required>
+          <input v-model="username" type="text" class="form-control mb-3" placeholder="Username" required>
         </div>
         <div>
           <input type="password" class="form-control mb-3" placeholder="Password" required>
