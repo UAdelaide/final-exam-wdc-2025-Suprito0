@@ -51,7 +51,9 @@ router.post('/login', async (req, res) => {
 
     const user = row[0];
 
-    if(user.role === '')
+    if(user.role === 'walker'){
+      return res.redirect()
+    }
 
     res.send({ message: 'Login successful', user: rows[0] });
   } catch (error) {
