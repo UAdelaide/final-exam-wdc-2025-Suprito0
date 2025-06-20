@@ -81,7 +81,7 @@
             console.error(error);
             alert('Login error');
           }
-        }
+        },
 
         async loadDogs() {
           try {
@@ -98,7 +98,7 @@
 
             this.dogs = dogsWithPhotos;
           } catch (error) {
-            console.error();
+            console.error('Failed to fetch dogs:', err);
           }
         }
       }
