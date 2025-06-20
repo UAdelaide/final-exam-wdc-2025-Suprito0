@@ -35,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dog, "></tr>
+        <tr v-for="(dog, index) in dogs" :key="index"></tr>
       </tbody>
     </table>
   </div>
