@@ -87,7 +87,7 @@
           }
         },
 
-        // Loads information and 
+        // Loads information and pictures of dogs
         async loadDogs() {
           try {
             const res = await fetch('/api/walks/dogs');
@@ -95,6 +95,7 @@
 
             const dogsWithPhotos = await Promise.all(
               dogsData.map(async dog => {
+                //fetches from api
                 const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
                 const imgData = await imgRes.json();
                 return { ...dog, photo: imgData.message };
