@@ -51,14 +51,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    const user = rows[0];
-
-    req.session.user = {
-      user_id: user.user_id,
-      email: user.email,
-      role: user.role,
-      username: username
-    };
+    req.session.user = rows[0];
 
     if (user.role === 'walker') {
       return res.json({ redirectTo: '/walker-dashboard.html' });
