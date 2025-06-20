@@ -25,7 +25,13 @@
       <button type="submit" class="btn btn-primary w-10">Log In</button>
     </form>
     <h2 class="mb-3">All Registered Dogs</h2>
-    <table class="table table-bordered table-striped" v-if="dogs.length > 0"></table>
+    <table class="table table-bordered table-striped" v-if="dogs.length > 0">
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
   </div>
 
   <script>
