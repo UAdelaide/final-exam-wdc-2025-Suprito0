@@ -56,10 +56,10 @@ router.post('/login', async (req, res) => {
     const user = rows[0];
 
     if (user.role === 'walker') {
-      return res.json({ redirectTo: '/walker-dashboard.html' });
+      return res.redirect('/owner-dashboard.html');
     }
     if (user.role === 'owner') {
-      return res.json({ redirectTo: '/owner-dashboard.html' });
+      return res.redirect('/walker-dashboard.html');
     }
 
     res.status(403).json({ error: 'Unauthorized role' });
