@@ -150,7 +150,7 @@
             }
             dogs.value = await res.json();
           } catch (error) {
-            
+            error.value = err.message;
           }
         }
 
@@ -161,6 +161,7 @@
         return {
           form,
           walks,
+          dogs,
           message,
           error,
           submitWalkRequest,
