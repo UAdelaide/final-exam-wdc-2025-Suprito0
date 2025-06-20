@@ -49,7 +49,11 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+
     const user = rows[0];
+    if (password !== user.password_hash) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
 
     if(user.role === 'walker'){
       return res.redirect('/walker-dashboard.html');
