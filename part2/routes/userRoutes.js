@@ -39,7 +39,7 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-console.log('Received:', username, password);
+  console.log('Received:', username, password);
 
   try {
     const [rows] = await db.query(`
