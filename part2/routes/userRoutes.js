@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
   console.log('Received:', username, password); // for debug
 
   try {
-    //
+    //replaced email with username
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
