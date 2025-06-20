@@ -122,7 +122,9 @@
             const data = await res.json();
 
             if (res.ok && data.redirectTo) {
-              window.location.href = data.redirectTo
+              window.location.href = data.redirectTo;
+            } else {
+              
             }
           }
         }
