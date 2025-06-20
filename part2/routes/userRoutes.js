@@ -52,8 +52,8 @@ router.post('/login', async (req, res) => {
     const user = row[0];
 
     if(user.role === 'walker'){
-      return res.redirect('/')
-    }
+      return res.redirect('/walker-dashboard.html');
+    } else if
 
     res.send({ message: 'Login successful', user: rows[0] });
   } catch (error) {
