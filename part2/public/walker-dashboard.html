@@ -74,6 +74,21 @@
           }
         }
 
+                async function logout() {
+          try {
+            const res = await fetch('api/users/logout', { method: 'POST' });
+            const data = await res.json();
+
+            if (res.ok && data.redirectTo) {
+              window.location.href = data.redirectTo;
+            } else {
+              error.value = 'Logout failed';
+            }
+          } catch (error) {
+            error.value = 'Logout error';
+          }
+        }
+
         onMounted(() => {
           loadWalkRequests();
         });
