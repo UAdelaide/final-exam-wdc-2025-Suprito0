@@ -68,7 +68,7 @@ router.post('/login', async (req, res) => {
       return res.redirect('/owner-dashboard.html');
     }
 
-    res.send({ message: 'Login successful', user: rows[0] });
+    res.status(403).json({ error: 'Unauthorized role' });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
