@@ -121,7 +121,9 @@
             const res = await fetch('api/users/logout', { method: 'POST' });
             const data = await res.json();
 
-            if (res.ok && data.redirectTo)
+            if (res.ok && data.redirectTo) {
+              window.location.href = data.redirectTo
+            }
           }
         }
 
