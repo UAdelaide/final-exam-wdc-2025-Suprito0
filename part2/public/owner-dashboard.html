@@ -146,7 +146,7 @@
           try {
             const res = await fetch('/api/dogs/registered-dogs');
             if (!res.ok) {
-              console.
+              console.error('Failed to load dogs');
             }
           }
         }
