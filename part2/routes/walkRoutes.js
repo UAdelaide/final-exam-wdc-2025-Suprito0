@@ -68,8 +68,8 @@ router.get('/registered-dogs', async (req, res) =>{
 
   try {
     const [dogs] = await db.query(
-      
-    )
+      `SELECT dog_id`
+    );
   } catch (error) {
     console.error('Failed to fetch dogs:', error);
     res.status(500).json({error: 'Failed to fetch dogs' });
