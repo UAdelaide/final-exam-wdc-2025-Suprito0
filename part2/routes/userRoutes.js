@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
-      console.log('ROW: ', rows);
+    console.log('ROW: ', rows);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -58,15 +58,15 @@ router.post('/login', async (req, res) => {
     const user = rows[0];
 
     if (user.role === 'owner') {
-      res.json({ redirectTo: '/owner-dashboard.html' });
+      return res.json({ redirectTo: '/owner-dashboard.html' });
     }
     if (user.role === 'walker') {
-      res.json({ redirectTo: '/walker-dashboard.html' });
+      return res.json({ redirectTo: '/walker-dashboard.html' });
     }
 
-    res.status(403).json({ error: 'Unauthorized role' });
+    return res.status(403).json({ error: 'Unauthorized role' });
   } catch (error) {
-    res.status(500).json({ error: 'Login failed' });
+    return res.status(500).json({ error: 'Login failed' });
   }
 });
 
