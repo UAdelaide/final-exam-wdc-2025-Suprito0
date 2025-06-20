@@ -101,6 +101,10 @@
           } catch (error) {
             console.error('Failed to fetch dogs:', err);
           }
+        },
+
+        mounted() {
+          this.loadDogs();
         }
       }
     }).mount('#app');
