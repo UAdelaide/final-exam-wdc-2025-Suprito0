@@ -60,6 +60,7 @@
         };
       },
       methods: {
+        // login function
         async login() {
           try {
             const response = await fetch('/api/users/login', {
@@ -86,6 +87,7 @@
           }
         },
 
+        // Loads information and 
         async loadDogs() {
           try {
             const res = await fetch('/api/walks/dogs');
