@@ -42,7 +42,7 @@
       methods: {
         async login() {
           try {
-            const response = await fetch('/api/userslogin', {
+            const response = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-type': 'application/x-www-form-urlencoded' },
               body: new URLSearchParams({
@@ -50,6 +50,8 @@
                 password: this.password
               })
             });
+            
+            console.log('Sending login:', this.username, this.password);
 
             const data = await response.json();
             if (response.ok && data.redirectTo) {
