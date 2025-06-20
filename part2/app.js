@@ -17,6 +17,7 @@ app.use(session({
         httpOnly: true
     }
 }));
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
