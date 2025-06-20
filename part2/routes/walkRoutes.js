@@ -62,8 +62,9 @@ router.post('/:id/apply', async (req, res) => {
 // GET dog_id and name
 router.get('/registered-dogs', async (req, res) =>{
   if(!req.session.user) {
-    return res.status(401).json({error: ''});
+    return res.status(401).json({error: 'Not logged in'});
   }
+  const ownerId
 });
 
 module.exports = router;
