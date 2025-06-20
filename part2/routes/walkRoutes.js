@@ -61,7 +61,9 @@ router.post('/:id/apply', async (req, res) => {
 
 // GET dog_id and name
 router.get('/registered-dogs', async (req, res) =>{
-  if(!req.session.user)
+  if(!req.session.user) {
+    return res.status(401).json
+  }
 });
 
 module.exports = router;
