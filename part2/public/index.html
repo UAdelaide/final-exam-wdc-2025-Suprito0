@@ -97,7 +97,9 @@
             );
 
             this.dogs = dogsWithPhotos;
-          } catch (err)
+          } catch (error) {
+            console.error();
+          }
         }
       }
     }).mount('#app');
