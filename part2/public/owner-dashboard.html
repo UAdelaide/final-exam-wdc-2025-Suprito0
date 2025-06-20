@@ -149,6 +149,8 @@
               console.error('Failed to load dogs');
             }
             dogs.value = await res.json();
+          } catch (error) {
+            console.error
           }
         }
 
