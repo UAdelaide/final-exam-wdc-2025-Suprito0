@@ -143,6 +143,7 @@
 
         const dogs = ref([]);
 
+        
         async function loadDogs() {
           try {
             const res = await fetch('/api/walks/registered-dogs');
@@ -163,7 +164,7 @@
         return {
           form,
           walks,
-          dogs,
+          dogs, // Added dogs
           message,
           error,
           submitWalkRequest,
