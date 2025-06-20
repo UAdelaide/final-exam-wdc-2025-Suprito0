@@ -81,7 +81,7 @@ router.post('/logout', (req, res) => {
     // clear cookies
     res.clearCookie('connect.sid');
     // redirect to login page
-    res.json({ redirectTo: '/login.html' });
+    return res.json({ redirectTo: '/login.html' });
   });
 });
 
