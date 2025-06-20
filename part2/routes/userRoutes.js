@@ -76,8 +76,9 @@ router.post('/logout', (req, res) => {
   req.session.destroy(error => {
     if (error) {
       console.error('Logout error: ', error);
-      return res.status(500).json({error: 'L'})
+      return res.status(500).json({error: 'Logout Failed'});
     }
+    
   })
 });
 
