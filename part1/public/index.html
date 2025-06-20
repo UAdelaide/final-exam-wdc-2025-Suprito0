@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dog of the Day</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1 style="color: lightblue;">Hound Most Notable This Day</h1>
+        <img v-bind:src="dogImage" alt="">
+        <button style="margin-left: 2000px; font-size: 5px; padding: 2px;" type="button" @click="getDog">Fetch Another
+            Hound</button>
+    </div>
+    <script>
+        Vue.createApp({
+            data: function () {
+                return {
+                    dogImage: ''
+                };
+            },
+            mounted: function () {
+                this.getDog();
+            },
+            methods: {
+                getDog: function () {
+                    fetch('https://dog.ceo/api/breeds/image/random')
+                        .then(res => res.json())
+                        .then(data => {
+                            this.dogImage = data.message;
+                        });
+                }
+            }
+        }).mount('#app');
+
+    </script>
+
+</body>
+
+</html>
