@@ -55,18 +55,18 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    if(user.role === 'walker'){
-      return res.redirect('/walker-dashboard.html');
-    } else if(user.role === 'owner') {
-      return res.redirect('/owner-dashboard.html');
-    }
-
     req.session.user = {
       user_id: user.user_id,
       email: user.email,
       role: user.role,
       username: username
     };
+
+    if(user.role === 'walker'){
+      return res.redirect('/walker-dashboard.html');
+    } else if(user.role === 'owner') {
+      return res.redirect('/owner-dashboard.html');
+    }
 
     res.send({ message: 'Login successful', user: rows[0] });
   } catch (error) {
