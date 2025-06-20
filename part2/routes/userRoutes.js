@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
     const user = row[0];
 
     if(user.role === 'walker'){
-      return res.sendFile(path.join(__dirname, '..'))
+      return res.sendFile)
     }
 
     res.send({ message: 'Login successful', user: rows[0] });
