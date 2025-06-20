@@ -53,7 +53,10 @@
             } else {
               alert(data.error || 'Login Failed');
             }
-          } catch ()
+          } catch (error) {
+            console.error(error);
+            alert()
+          }
         }
       }
     }).mount('#app');
