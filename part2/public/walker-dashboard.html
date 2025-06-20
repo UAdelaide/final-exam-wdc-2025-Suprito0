@@ -70,7 +70,8 @@
         // Apply to walk a specific dog for a given request ID
         async function applyToWalk(requestId) {
           try {
-            const currentUser = await getCurrentUser();
+            const currentUser = await getCurrentUser(); // fetch user ID dynamically
+            
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
