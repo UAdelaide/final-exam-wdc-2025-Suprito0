@@ -67,10 +67,10 @@ router.get('/registered-dogs', async (req, res) =>{
   const owner_id = req.session.user.user_id;
 
   try {
-
+    
   } catch (error) {
     console.error('Failed to fetch dogs:', error);
-    res.status(500).json({})
+    res.status(500).json({error: 'Failed to fetch dogs' });
   }
 });
 
