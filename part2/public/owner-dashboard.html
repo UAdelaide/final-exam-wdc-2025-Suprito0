@@ -124,7 +124,7 @@
             if (res.ok && data.redirectTo) {
               window.location.href = data.redirectTo;
             } else {
-              
+              error.value = 'Logout';
             }
           }
         }
