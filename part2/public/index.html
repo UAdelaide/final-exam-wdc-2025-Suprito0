@@ -52,8 +52,8 @@
             });
 
             const data = await response.json();
-            if (response.redirected) {
-              window.location.href = response.url;
+            if (response.ok && data.redirectTo) {
+              window.location.href = data.redirectTo;
             } else {
               this.error = true;
             }
