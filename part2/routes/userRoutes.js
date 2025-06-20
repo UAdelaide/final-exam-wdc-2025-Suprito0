@@ -62,12 +62,12 @@ router.post('/login', async (req, res) => {
       username: username
     };
 
-    if(user.role === 'walker'){
-      return res.redirect('/walker-dashboard.html');
-    }
-    if(user.role === 'owner') {
-      return res.redirect('/owner-dashboard.html');
-    }
+if (user.role === 'walker') {
+  return res.json({ redirectTo: '/walker-dashboard.html' });
+}
+if (user.role === 'owner') {
+  return res.json({ redirectTo: '/owner-dashboard.html' });
+}
 
     res.status(403).json({ error: 'Unauthorized role' });
   } catch (error) {
