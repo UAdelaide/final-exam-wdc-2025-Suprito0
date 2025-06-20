@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
 
     req.session.user = rows[0];
 
-    const user = 
+    const user = rows[0];
 
     if (user.role === 'walker') {
       return res.json({ redirectTo: '/walker-dashboard.html' });
