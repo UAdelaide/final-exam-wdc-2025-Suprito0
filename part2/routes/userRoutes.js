@@ -80,7 +80,7 @@ router.post('/logout', (req, res) => {
     }
     // clear cookies
     res.clearCookie('connect.sid');
-    // redirect to login page
+    // redirect to index
     return res.json({ redirectTo: '/' });
   });
 });
