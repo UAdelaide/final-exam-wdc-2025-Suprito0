@@ -69,7 +69,7 @@ router.get('/registered-dogs', async (req, res) =>{
   try {
 
   } catch (error) {
-    
+    console.error('Failed to fetch dogs:', erro)
   }
 });
 
