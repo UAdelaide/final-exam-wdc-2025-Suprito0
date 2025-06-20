@@ -42,7 +42,7 @@
       methods: {
         async login() {
           try {
-            const response = await fetch('/api/users/login', {
+            const response = await fetch('/api/userslogin', {
               method: 'POST',
               headers: { 'Content-type': 'application/x-www-form-urlencoded' },
               body: new URLSearchParams({
