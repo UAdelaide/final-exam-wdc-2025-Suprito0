@@ -51,10 +51,6 @@ router.post('/login', async (req, res) => {
 
     const user = rows[0];
 
-    if (password !== user.password_hash) {
-      return res.status(401).json({ error: 'Invalid credentials' });
-    }
-
     req.session.user = {
       user_id: user.user_id,
       email: user.email,
