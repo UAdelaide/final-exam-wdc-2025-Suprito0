@@ -78,7 +78,7 @@ router.get('/registered-dogs', async (req, res) => {
   }
 });
 
-router.get('/api/dogs', async (req, res) => {
+router.get('/dogs', async (req, res) => {
   try {
   const query =`
   SELECT
